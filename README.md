@@ -18,27 +18,6 @@ To generate a report that breaks down the game's purchasing data into meaningful
 
 ## Syntax Detail
 
-### Purchasing Analysis (Total)
-
-```sql
-SELECT 
-
-DISTINCT(item_id) as 'Number of Unique Items',
-AVG(price) as 'Average Price',
-COUNT(item_id) as 'Number of Purchases',
-SUM(price) as 'Total Revenue'
-
-FROM purchase_table
-
-;
-```
-
-
-
-
-
-Gender Demographics
-
 ###  Gender Demographics
 
 ```sql
@@ -58,9 +37,11 @@ ORDER BY "Percentage of Players" DESC
 ;
 ```
 
-
-
-
+|         Gender        | Percentage of Players | Total Count |
+|:---------------------:|:---------------------:|:-----------:|
+|          Male         |        81.23543       |     697     |
+|         Female        |        17.36597       |     149     |
+| Other / Non-Disclosed |        1.398601       |      12     |
 
 ### Purchasing Analysis (Gender)
 
@@ -78,9 +59,11 @@ GROUP BY gender
 ;
 ```
 
-
-
-
+|         gender        | Purchase Count | Average Purchase Price | Total Purchase Value |
+|:---------------------:|:--------------:|:----------------------:|:--------------------:|
+|         Female        |       149      |        2.847584        |        424.29        |
+|          Male         |       697      |        2.944448        |        2052.28       |
+| Other / Non-Disclosed |       12       |          3.155         |         37.86        |
 
 ### Age Demographics
 
@@ -182,7 +165,16 @@ WHERE age > 40
 ;
 ```
 
-
+|   Age   | Percentage of Players | Total Count |
+|:-------:|:---------------------:|:-----------:|
+|  6 - 10 |        0.038462       |      33     |
+| 11 - 14 |        0.044289       |      38     |
+| 15 - 19 |        0.167832       |     144     |
+| 20 - 24 |        0.433566       |     372     |
+| 25 - 29 |        0.156177       |     134     |
+| 30 - 34 |        0.082751       |      71     |
+| 35 - 39 |        0.055944       |      48     |
+|   40+   |        0.003497       |      3      |
 
 ### Purchasing Analysis (Age)
 
@@ -292,9 +284,16 @@ WHERE age > 40
 ;
 ```
 
-
-
-
+|   Age   | Purchase Count | Average Purchase Price | Total Purchase Value |
+|:-------:|:--------------:|:----------------------:|:--------------------:|
+|  6 - 10 |       33       |        2.947879        |         97.28        |
+| 11 - 14 |       38       |        2.787105        |        105.91        |
+| 15 - 19 |       144      |        2.894653        |        416.83        |
+| 20 - 24 |       372      |        2.923817        |        1087.66       |
+| 25 - 29 |       134      |        2.958507        |        396.44        |
+| 30 - 34 |       71       |        2.973803        |        211.14        |
+| 35 - 39 |       48       |        2.932708        |        140.77        |
+|   40+   |        3       |          2.88          |         8.64         |
 
 ### Top Spenders
 
@@ -314,8 +313,13 @@ LIMIT 5
 ;
 ```
 
-
-
+|       SN      | Purchase Count | Average Purchase Price | Total Purchase Value |
+|:-------------:|:--------------:|:----------------------:|:--------------------:|
+|  Undirrala66  |        5       |          3.412         |         17.06        |
+| Aerithllora36 |        4       |          3.775         |         15.1         |
+|    Saedue76   |        4       |          3.39          |         13.56        |
+|    Sondim43   |        4       |          3.255         |         13.02        |
+|  Mindimnya67  |        4       |          3.185         |         12.74        |
 
 
 ### Most Popular Items
@@ -337,9 +341,13 @@ LIMIT 5
 ;
 ```
 
-
-
-
+| Item ID |              Item Name             | Purchase Count | Item Price | Total Purchase Value |
+|:-------:|:----------------------------------:|:--------------:|:----------:|:--------------------:|
+|   133   |          Faith's Scimitar          |        5       |    3.82    |         17.06        |
+|   148   | Warmonger, Gift of Suffering's End |        4       |    4.65    |         15.1         |
+|   122   |          Unending Tyranny          |        4       |    1.21    |         5.87         |
+|   104   |         Gladiator's Glaive         |        4       |    1.84    |         9.68         |
+|   161   |               Devine               |        4       |    1.45    |         12.74        |
 
 ### Most Profitable Items
 
@@ -360,7 +368,13 @@ LIMIT 5
 ;
 ```
 
-
+| Item ID |              Item Name             | Purchase Count | Item Price | Total Purchase Value |
+|:-------:|:----------------------------------:|:--------------:|:----------:|:--------------------:|
+|   133   |          Faith's Scimitar          |        5       |    3.82    |         17.06        |
+|   148   | Warmonger, Gift of Suffering's End |        4       |    4.65    |         15.1         |
+|    73   |             Ritual Mace            |        4       |    3.74    |         13.56        |
+|    94   |           Mourning Blade           |        4       |    3.64    |         13.02        |
+|   161   |               Devine               |        4       |    1.45    |         12.74        |
 
 ## Technology Used
 
